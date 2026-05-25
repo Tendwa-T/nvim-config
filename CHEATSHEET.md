@@ -157,11 +157,19 @@ Selection and highlighting:
 - `<C-v>` - Highlight by block / column
 - `<Esc>` - Clear the current selection
 
+Commenting:
+
+- `gc{motion}` - Add or toggle a line comment over a motion or visual selection
+- `gcc` - Toggle a comment on the current line
+- `gb{motion}` - Add or toggle a block comment over a motion or visual selection
+- `gbc` - Toggle a block comment on the current block
+
 Basic editing:
 
 - `yy` - Yank the current line
 - `dd` - Delete the current line
 - `cc` - Change the current line
+- `jk` - Exit insert mode quickly
 - `p` - Paste after the cursor or line
 - `P` - Paste before the cursor or line
 - `u` - Undo

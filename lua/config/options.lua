@@ -10,6 +10,8 @@ vim.opt.clipboard = "unnamedplus" -- Sync with Mac clipboard
 vim.opt.ignorecase = true         -- Case-insensitive search
 vim.opt.smartcase = true          -- Case-sensitive if capital letter included
 
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })
+
 -- Set the leader key to Space (used for Telescope commands)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
