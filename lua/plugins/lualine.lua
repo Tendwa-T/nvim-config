@@ -13,9 +13,9 @@ return {
         -- Keeps a single, unified status bar spanning the entire bottom of the terminal
         globalstatus = true,
 
-        -- Don't show lualine when Neo-tree or Alpha (dashboard) are the only open windows
+        -- Keep transient picker/dashboard windows uncluttered.
         disabled_filetypes = {
-          statusline = { "neo-tree", "alpha" },
+          statusline = { "snacks_picker_list", "snacks_dashboard", "alpha" },
         },
       },
       sections = {

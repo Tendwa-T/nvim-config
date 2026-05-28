@@ -6,7 +6,7 @@ return {
         {
             "<leader>lf",
             function()
-                require("conform").format({ async = true, lsp_fallback = true })
+                require("conform").format({ async = true, lsp_format = "fallback" })
             end,
             desc = "Format Buffer",
         },
@@ -19,12 +19,26 @@ return {
     opts = {
         formatters_by_ft = {
             typescript = { "prettier" },
+            typescriptreact = { "prettier" },
             javascript = { "prettier" },
+            javascriptreact = { "prettier" },
             json = { "prettier" },
+            jsonc = { "prettier" },
+            css = { "prettier" },
+            scss = { "prettier" },
+            html = { "prettier" },
+            yaml = { "prettier" },
+            markdown = { "prettier" },
+            graphql = { "prettier" },
+            dart = {},
+            java = {},
         },
         format_on_save = {
-            timeout_ms = 500,
-            lsp_fallback = true,
+            timeout_ms = 1000,
+            lsp_format = "fallback",
         },
     },
+    config = function(_, opts)
+        require("conform").setup(opts)
+    end,
 }

@@ -1,17 +1,55 @@
 -- luacheck: globals vim
-vim.opt.termguicolors = true      -- Enables 24-bit RGB colors
-vim.opt.number = true             -- Show absolute line numbers
-vim.opt.relativenumber = true     -- Relative line numbers for fast jumping
-vim.opt.expandtab = true          -- Convert tabs to spaces
-vim.opt.shiftwidth = 2            -- 2 spaces for indentation
+vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
+vim.opt.cursorline = true
+vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
+
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.smartindent = true        -- Auto-indent new lines
-vim.opt.clipboard = "unnamedplus" -- Sync with Mac clipboard
-vim.opt.ignorecase = true         -- Case-insensitive search
-vim.opt.smartcase = true          -- Case-sensitive if capital letter included
+vim.opt.smartindent = true
+
+vim.opt.clipboard = "unnamedplus"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.inccommand = "split"
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 400
+vim.opt.undofile = true
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.writebackup = false
+
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = "  ",
+  trail = "·",
+  extends = ">",
+  precedes = "<",
+  nbsp = "+",
+}
+
+vim.opt.wildignore:append({
+  "*/node_modules/*",
+  "*/.git/*",
+  "*/.dart_tool/*",
+  "*/build/*",
+  "*/target/*",
+  "*/.gradle/*",
+})
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })
 
--- Set the leader key to Space (used for Telescope commands)
+-- Set the leader key to Space.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
